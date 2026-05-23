@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Dwellr.Models.Message>
+@{
+    ViewData["Title"] = "Messages";
+}
+
+<h2 class="mb-4">My Messages</h2>
+@if (!Model.Any())
+{
+    <div class="alert alert-info">You have no messages yet.</div>
+}
+else
+{
+    <div class="list-group">
+        @foreach (var m in Model)
+        {
+            <a asp-controller="Message" asp-action="Conversation"
+               asp-route-propertyId="@m.PropertyId"
+               asp-route-otherUserId="@(m.SenderId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value ? m.ReceiverId : m.SenderId)"
+               class="list-group-item list-group-item-action @(!m.IsRead ? "fw-bold" : "")">
+                <div class="d-flex justify-content-between">
+                    <span>🏠 @m.Property?.Title</span>
+                    <small class="text-muted">@m.SentAt.ToString("MMM dd, yyyy")</small>
+                </div>
+                <small class="text-muted">
+                    @(m.SenderId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value ? "You" : m.Sender?.FullName):
+                    @m.Body.Substring(0, Math.Min(m.Body.Length, 60))...
+                </small>
+            </a>
+        }
+    </div>
+}

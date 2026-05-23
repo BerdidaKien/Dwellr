@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Dwellr.Models.AppUser>
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<h2 class="mb-4">Manage Users</h2>
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FullName</td>
+                <td>@user.Email</td>
+                <td>@user.ActiveRole</td>
+                <td>
+                    <span class="badge bg-@(user.VerificationStatus == Dwellr.Models.VerificationStatus.IDApproved ? "success" :
+                                                  user.VerificationStatus == Dwellr.Models.VerificationStatus.Banned ? "danger" : "warning")">
+                        @user.VerificationStatus
+                    </span>
+                </td>
+                <td>
+                    @if (user.VerificationStatus == Dwellr.Models.VerificationStatus.IDSubmitted)
+                    {
+                        <form asp-controller="Admin" asp-action="ApproveID"
+                              asp-route-userId="@user.Id" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-success">Approve ID</button>
+                        </form>
+                    }
+                    @if (user.VerificationStatus != Dwellr.Models.VerificationStatus.Banned)
+                    {
+                        <form asp-controller="Admin" asp-action="BanUser"
+                              asp-route-userId="@user.Id" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Ban this user?')">
+                                Ban
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

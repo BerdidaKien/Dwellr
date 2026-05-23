@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Dwellr.Models.RentalApplication>
+@{
+    ViewData["Title"] = "My Rentals";
+}
+
+<h2 class="fw-bold mb-4">🏠 My Rentals</h2>
+
+@if (!Model.Any())
+{
+    <div class="text-center py-5">
+        <h1>🏠</h1>
+        <h4 class="text-muted">No rentals yet.</h4>
+        <a asp-controller="Listing" asp-action="Index"
+           class="btn btn-primary mt-3">Browse Listings</a>
+    </div>
+}
+else
+{
+    <div class="row g-4">
+        @foreach (var r in Model)
+        {
+            var p = r.Property!;
+            var cover = p.Photos.FirstOrDefault(ph => ph.IsCover)
+            ?? p.Photos.FirstOrDefault();
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-100">
+                    @if (cover != null)
+                    {
+                        <img src="@cover.ImagePath" class="card-img-top"
+                             style="height:180px;object-fit:cover;" />
+                    }
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="badge bg-primary">@p.Type</span>
+                            <span class="badge bg-@(
+                                  r.Status == Dwellr.Models.ApplicationStatus.Paid
+                                      ? "success" : "secondary")">
+                                @r.Status
+                            </span>
+                        </div>
+                        <h5 class="fw-bold">@p.Title</h5>
+                        <p class="text-muted small">
+                            📍 @p.District, @p.City
+                        </p>
+                        <p class="text-muted small">
+                            🏠 Landlord: @p.Landlord?.FullName
+                        </p>
+                        <hr />
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <small class="text-muted">Deposit Paid</small>
+                                <p class="fw-bold text-success mb-0">
+                                    ₱@r.DepositAmount.ToString("N2")
+                                </p>
+                            </div>
+                            <div class="text-end">
+                                <small class="text-muted">Rented On</small>
+                                <p class="fw-bold mb-0">
+                                    @r.PaidAt?.ToString("MMM dd, yyyy")
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0 d-flex gap-2">
+                        <a asp-controller="Rental" asp-action="Receipt"
+                           asp-route-applicationId="@r.RentalApplicationId"
+                           class="btn btn-outline-primary flex-grow-1">
+                            🧾 View Receipt
+                        </a>
+                        <a asp-controller="Message" asp-action="Conversation"
+                           asp-route-propertyId="@p.PropertyId"
+                           asp-route-otherUserId="@p.LandlordId"
+                           class="btn btn-outline-secondary">
+                            💬
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

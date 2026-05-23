@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Dwellr.Models.Transaction>
+@{
+    ViewData["Title"] = "My Wallet";
+    var userId = ViewBag.UserId as string;
+}
+
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm p-4 text-center"
+             style="background: linear-gradient(135deg, #1a1a2e, #0f3460);">
+            <p class="text-white-50 mb-1">Available Balance</p>
+            <h2 class="text-white fw-bold">
+                ₱@(((decimal)ViewBag.Balance).ToString("N2"))
+            </h2>
+            <a asp-controller="Wallet" asp-action="TopUp"
+               class="btn btn-warning mt-3">
+                + Top Up Wallet
+            </a>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm p-4 h-100">
+            <h5 class="fw-bold mb-3">Quick Actions</h5>
+            <div class="d-flex gap-3 flex-wrap">
+                <a asp-controller="Wallet" asp-action="TopUp"
+                   class="btn btn-outline-primary">
+                    💳 Top Up
+                </a>
+                <a asp-controller="Rental" asp-action="MyRentals"
+                   class="btn btn-outline-success">
+                    🏠 My Rentals
+                </a>
+                <a asp-controller="Listing" asp-action="Index"
+                   class="btn btn-outline-secondary">
+                    🔍 Browse Listings
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h5 class="fw-bold mb-3">Transaction History</h5>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No transactions yet.</div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var t in Model)
+                {
+                    var isCredit = t.ReceiverId == userId;
+                    <tr>
+                        <td>@t.CreatedAt.ToString("MMM dd, yyyy hh:mm tt")</td>
+                        <td>@t.Description</td>
+                        <td>
+                            <span class="badge bg-@(
+                                  t.Type == Dwellr.Models.TransactionType.TopUp
+                                      ? "success" :
+                                  t.Type == Dwellr.Models.TransactionType.Deposit
+                                      ? "primary" : "warning")">
+                                @t.Type
+                            </span>
+                        </td>
+                        <td class="fw-bold @(isCredit ? "text-success" : "text-danger")">
+                            @(isCredit ? "+" : "-")₱@t.Amount.ToString("N2")
+                        </td>
+                        <td>
+                            <span class="badge bg-@(
+                                  t.Status == Dwellr.Models.TransactionStatus.Completed
+                                      ? "success" : "secondary")">
+                                @t.Status
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

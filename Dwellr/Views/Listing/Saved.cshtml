@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Dwellr.Models.SavedListing>
+@{
+    ViewData["Title"] = "Saved Listings";
+}
+
+<h2 class="mb-4">❤️ Saved Listings</h2>
+
+@if (!Model.Any())
+{
+    <div class="text-center py-5">
+        <h1>💔</h1>
+        <h4 class="text-muted">No saved listings yet.</h4>
+        <a asp-controller="Listing" asp-action="Index"
+           class="btn btn-primary mt-3">Browse Listings</a>
+    </div>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var s in Model)
+        {
+            var p = s.Property!;
+            var cover = p.Photos.FirstOrDefault(ph => ph.IsCover)
+            ?? p.Photos.FirstOrDefault();
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    @if (cover != null)
+                    {
+                        <img src="@cover.ImagePath" class="card-img-top"
+                             style="height:200px;object-fit:cover;" />
+                    }
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">@p.Type</span>
+                        <h5 class="card-title fw-bold">@p.Title</h5>
+                        <p class="text-muted small">📍 @p.District, @p.City</p>
+                        <p class="fw-bold text-success">
+                            ₱@p.Price.ToString("N0")/mo
+                        </p>
+                    </div>
+                    <div class="card-footer bg-white border-0 d-flex gap-2">
+                        <a asp-controller="Listing" asp-action="Detail"
+                           asp-route-id="@p.PropertyId"
+                           class="btn btn-outline-primary flex-grow-1">
+                            View
+                        </a>
+                        <form asp-controller="Listing" asp-action="Unsave"
+                              method="post">
+                            <input type="hidden" name="propertyId"
+                                   value="@p.PropertyId" />
+                            <button type="submit"
+                                    class="btn btn-outline-danger">
+                                🗑 Remove
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Dwellr.Models.Report>
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<h2 class="mb-4">User Reports</h2>
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Reporter</th>
+            <th>Reported User</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Reporter?.FullName</td>
+                <td>@r.ReportedUser?.FullName</td>
+                <td>@r.Reason</td>
+                <td>
+                    <span class="badge bg-@(r.Status == Dwellr.Models.ReportStatus.Actioned ? "success" :
+                                                  r.Status == Dwellr.Models.ReportStatus.Reviewed ? "warning" : "secondary")">
+                        @r.Status
+                    </span>
+                </td>
+                <td>@r.CreatedAt.ToString("MMM dd, yyyy")</td>
+                <td>
+                    @if (r.Status == Dwellr.Models.ReportStatus.Pending)
+                    {
+                        <form asp-controller="Admin" asp-action="ActionReport"
+                              asp-route-reportId="@r.ReportId" method="post">
+                            <button type="submit" class="btn btn-sm btn-primary">Mark Actioned</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

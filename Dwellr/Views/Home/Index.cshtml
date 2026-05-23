@@ -1,0 +1,209 @@
+﻿@model IEnumerable<Dwellr.Models.Property>
+@{
+    ViewData["Title"] = "Find Your Next Home";
+}
+
+<!-- Hero Section -->
+<div class="hero-section text-white text-center py-5 mb-5 rounded-3"
+     style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+    <div class="container py-4">
+        <h1 class="display-4 fw-bold mb-3">Find Your Perfect Place</h1>
+        <p class="lead mb-4 text-white-50">
+            Browse verified houses, rooms, and bedspaces for rent across the Philippines.
+            Connect directly with landlords — no middlemen, no hidden fees.
+        </p>
+        <form asp-controller="Home" asp-action="Index" method="get"
+              class="row g-2 justify-content-center">
+            <div class="col-md-3">
+                <input type="text" name="city" class="form-control form-control-lg"
+                       placeholder="🏙 City" value="@ViewBag.SelectedCity" />
+            </div>
+            <div class="col-md-2">
+                <select name="type" class="form-select form-select-lg">
+                    <option value="">All Types</option>
+                    @foreach (var t in Enum.GetValues<Dwellr.Models.PropertyType>())
+                    {
+                        <option value="@t"
+                                selected="@(ViewBag.SelectedType?.ToString() == t.ToString())">
+                            @t
+                        </option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="minPrice" class="form-control form-control-lg"
+                       placeholder="₱ Min" value="@ViewBag.MinPrice" />
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="maxPrice" class="form-control form-control-lg"
+                       placeholder="₱ Max" value="@ViewBag.MaxPrice" />
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary btn-lg w-100">
+                    🔍 Search
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Stats Bar -->
+<div class="row text-center mb-5">
+    <div class="col-md-4">
+        <div class="card border-0 bg-light p-4">
+            <h2 class="fw-bold text-primary">@Model.Count()+</h2>
+            <p class="text-muted mb-0">Active Listings</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0 bg-light p-4">
+            <h2 class="fw-bold text-success">100%</h2>
+            <p class="text-muted mb-0">Verified Landlords</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0 bg-light p-4">
+            <h2 class="fw-bold text-warning">Zero</h2>
+            <p class="text-muted mb-0">Hidden Fees</p>
+        </div>
+    </div>
+</div>
+
+<!-- Latest Listings -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-bold mb-0">Latest Listings</h4>
+    <a asp-controller="Listing" asp-action="Index"
+       class="btn btn-outline-primary btn-sm">View All →</a>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+    @foreach (var p in Model.Take(6))
+    {
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 property-card">
+                @{
+                    var cover = p.Photos.FirstOrDefault(ph => ph.IsCover)
+                    ?? p.Photos.FirstOrDefault();
+                }
+                <div style="position:relative;">
+                    @if (cover != null)
+                    {
+                        <img src="@cover.ImagePath" class="card-img-top"
+                             style="height:200px;object-fit:cover;" alt="@p.Title" />
+                    }
+                    else
+                    {
+                        <div class="bg-secondary text-white d-flex align-items-center
+                                            justify-content-center" style="height:200px;">
+                            <span>📷 No Photo</span>
+                        </div>
+                    }
+                    <span class="badge bg-primary"
+                          style="position:absolute;top:10px;left:10px;">
+                        @p.Type
+                    </span>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">@p.Title</h5>
+                    <p class="text-muted small mb-2">📍 @p.District, @p.City</p>
+                    <p class="fw-bold text-success fs-5 mb-2">
+                        ₱@p.Price.ToString("N0")
+                        <small class="text-muted fs-6">/month</small>
+                    </p>
+                    <div class="d-flex gap-3 text-muted small">
+                        <span>🛏 @p.Bedrooms beds</span>
+                        <span>🚿 @p.Bathrooms baths</span>
+                        <span>📐 @p.AreaSqM m²</span>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0 pt-0">
+                    <a asp-controller="Listing" asp-action="Detail"
+                       asp-route-id="@p.PropertyId"
+                       class="btn btn-outline-primary w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@if (!Model.Any())
+{
+    <div class="text-center py-5">
+        <h1>🏠</h1>
+        <h4 class="text-muted">No listings found. Try adjusting your search.</h4>
+    </div>
+}
+
+<!-- How It Works -->
+<div class="bg-light rounded-3 p-5 mb-5">
+    <h3 class="text-center fw-bold mb-5">How Dwellr Works</h3>
+    <div class="row text-center g-4">
+        <div class="col-md-4">
+            <div class="display-4 mb-3">🔍</div>
+            <h5 class="fw-bold">1. Search</h5>
+            <p class="text-muted">
+                Browse hundreds of verified listings filtered by
+                city, type, and budget.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <div class="display-4 mb-3">💬</div>
+            <h5 class="fw-bold">2. Connect</h5>
+            <p class="text-muted">
+                Message landlords directly through our secure
+                in-app messaging system.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <div class="display-4 mb-3">🏡</div>
+            <h5 class="fw-bold">3. Move In</h5>
+            <p class="text-muted">
+                Finalize your rental agreement and move into
+                your new home.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Why Dwellr -->
+<div class="row g-4 mb-5">
+    <div class="col-12">
+        <h3 class="fw-bold mb-4 text-center">Why Choose Dwellr?</h3>
+    </div>
+    <div class="col-md-3 text-center">
+        <div class="card border-0 p-4 h-100">
+            <div class="display-5 mb-3">✅</div>
+            <h6 class="fw-bold">Verified Landlords</h6>
+            <p class="text-muted small">
+                Every landlord is ID-verified before they can post.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-3 text-center">
+        <div class="card border-0 p-4 h-100">
+            <div class="display-5 mb-3">🔒</div>
+            <h6 class="fw-bold">Privacy Protected</h6>
+            <p class="text-muted small">
+                Contact info is masked. All communication stays on platform.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-3 text-center">
+        <div class="card border-0 p-4 h-100">
+            <div class="display-5 mb-3">🚫</div>
+            <h6 class="fw-bold">Scam Protection</h6>
+            <p class="text-muted small">
+                Report suspicious listings. Scammers are permanently banned.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-3 text-center">
+        <div class="card border-0 p-4 h-100">
+            <div class="display-5 mb-3">💸</div>
+            <h6 class="fw-bold">Free to Use</h6>
+            <p class="text-muted small">
+                No broker fees. No hidden charges. Just find your home.
+            </p>
+        </div>
+    </div>
+</div>

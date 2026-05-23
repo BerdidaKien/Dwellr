@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Dwellr.Models.Property>
+@{
+    ViewData["Title"] = "My Listings";
+}
+
+<h2 class="mb-4">My Listings</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        You have no listings yet.
+        <a asp-controller="Listing" asp-action="Create">Post one now!</a>
+    </div>
+}
+else
+{
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Photos</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Title</td>
+                    <td>@p.Type</td>
+                    <td>₱@p.Price.ToString("N0")/mo</td>
+                    <td>
+                        <span class="badge bg-@(
+                              p.Status == Dwellr.Models.PropertyStatus.Published ? "success" :
+                              p.Status == Dwellr.Models.PropertyStatus.Rented ? "warning" :
+                              p.Status == Dwellr.Models.PropertyStatus.Hidden ? "danger" :
+                              "secondary")">
+                            @p.Status
+                        </span>
+                    </td>
+                    <td>@p.Photos.Count photos</td>
+                    <td class="d-flex flex-wrap gap-2">
+
+                        @* View button - always visible to landlord *@
+                        <a asp-controller="Listing" asp-action="Detail"
+                           asp-route-id="@p.PropertyId"
+                           class="btn btn-sm btn-outline-primary">
+                            👁 View
+                        </a>
+
+                        @* Draft - can publish *@
+                        @if (p.Status == Dwellr.Models.PropertyStatus.Draft)
+                        {
+                            <form asp-controller="Listing" asp-action="Publish"
+                                  asp-route-id="@p.PropertyId" method="post">
+                                <button type="submit" class="btn btn-sm btn-success">
+                                    🚀 Publish
+                                </button>
+                            </form>
+                        }
+
+                        @* Published - can mark as rented *@
+                        @if (p.Status == Dwellr.Models.PropertyStatus.Published)
+                        {
+                            <form asp-controller="Listing" asp-action="MarkRented"
+                                  asp-route-id="@p.PropertyId" method="post">
+                                <button type="submit" class="btn btn-sm btn-warning">
+                                    🏠 Mark Rented
+                                </button>
+                            </form>
+                        }
+
+                        @* Rented - can mark as available again *@
+                        @if (p.Status == Dwellr.Models.PropertyStatus.Rented)
+                        {
+                            <form asp-controller="Listing" asp-action="MarkAvailable"
+                                  asp-route-id="@p.PropertyId" method="post">
+                                <button type="submit" class="btn btn-sm btn-success"
+                                        onclick="return confirm('Mark this property as available again?')">
+                                    ✅ Mark Available
+                                </button>
+                            </form>
+                        }
+
+                        @* Hidden (banned) - no actions *@
+                        @if (p.Status == Dwellr.Models.PropertyStatus.Hidden)
+                        {
+                            <span class="text-danger small">
+                                🚫 Hidden by admin
+                            </span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a asp-controller="Listing" asp-action="Create" class="btn btn-primary mt-3">
+    + Post New Listing
+</a>

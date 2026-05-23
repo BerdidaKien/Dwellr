@@ -1,0 +1,51 @@
+﻿@model Dwellr.Models.AppUser
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4 text-center">
+            <div class="display-1 mb-3">👤</div>
+            <h4>@Model.FullName</h4>
+            <p class="text-muted">@Model.Email</p>
+            <span class="badge bg-@(Model.VerificationStatus == Dwellr.Models.VerificationStatus.IDApproved ? "success" :
+                                  Model.VerificationStatus == Dwellr.Models.VerificationStatus.Banned ? "danger" : "warning")">
+                @Model.VerificationStatus
+            </span>
+            <hr />
+            <p><strong>Role:</strong> @Model.ActiveRole</p>
+            <p><strong>Member since:</strong> @Model.CreatedAt.ToString("MMM yyyy")</p>
+            @if (Model.VerificationStatus == Dwellr.Models.VerificationStatus.Unverified ||
+                        Model.VerificationStatus == Dwellr.Models.VerificationStatus.EmailVerified)
+            {
+                <a asp-controller="Account" asp-action="UploadID"
+                   class="btn btn-warning w-100 mt-2">Upload ID for Verification</a>
+            }
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card shadow-sm p-4">
+            <h5>Account Status</h5>
+            <hr />
+            @if (Model.VerificationStatus == Dwellr.Models.VerificationStatus.IDApproved)
+            {
+                <div class="alert alert-success">
+                    ✅ Your account is fully verified. You can post listings.
+                </div>
+            }
+            else if (Model.VerificationStatus == Dwellr.Models.VerificationStatus.IDSubmitted)
+            {
+                <div class="alert alert-info">
+                    ⏳ Your ID is under review. We'll notify you once approved.
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning">
+                    ⚠️ Upload a valid ID to become a verified landlord and post listings.
+                </div>
+            }
+        </div>
+    </div>
+</div>
