@@ -1,0 +1,53 @@
+﻿@model Dwellr.Models.WaitlistEntry
+@{
+    ViewData["Title"] = "Join the Waitlist";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="text-center mb-4">
+            <h1 class="fw-bold">Rent in Cebu without the scams.</h1>
+            <p class="lead text-muted">
+                Every landlord on Dwellr is personally verified. No fake
+                listings, no deposits to strangers, no group-chat guessing.
+            </p>
+        </div>
+
+        <div class="card shadow-sm p-4">
+            <div asp-validation-summary="All" class="alert alert-danger"></div>
+            <form asp-controller="Leads" asp-action="Waitlist" method="post">
+                <input type="hidden" asp-for="Source" />
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Name (optional)</label>
+                    <input asp-for="FullName" class="form-control" />
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">I am a</label>
+                        <select asp-for="Occupation" class="form-select">
+                            <option value="Student">Student</option>
+                            <option value="Young professional">Young professional</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Monthly budget (₱)</label>
+                        <input asp-for="Budget" class="form-control" type="number" />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Preferred area</label>
+                    <input asp-for="PreferredArea" class="form-control"
+                           placeholder="e.g. near USC, IT Park, Mandaue" />
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100">
+                    Get early access
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

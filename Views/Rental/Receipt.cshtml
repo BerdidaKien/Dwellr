@@ -1,0 +1,83 @@
+﻿@model Dwellr.Models.RentalApplication
+@{
+    ViewData["Title"] = "Payment Receipt";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card shadow-sm p-4 text-center">
+            <div class="display-1 mb-3">🎉</div>
+            <h2 class="fw-bold text-success">Payment Successful!</h2>
+            <p class="text-muted">
+                Your rental has been confirmed. Here is your receipt.
+            </p>
+            <hr />
+
+            <div class="card bg-light border-0 p-4 text-start mb-4">
+                <h6 class="fw-bold mb-3">🧾 Receipt Details</h6>
+                <table class="table table-borderless mb-0">
+                    <tr>
+                        <td class="text-muted">Receipt No.</td>
+                        <td class="fw-bold">
+                            #DWL-@Model.RentalApplicationId.ToString("D6")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Property</td>
+                        <td class="fw-bold">@Model.Property?.Title</td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Location</td>
+                        <td>
+                            @Model.Property?.District,
+                            @Model.Property?.City
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Landlord</td>
+                        <td>@Model.Property?.Landlord?.FullName</td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Tenant</td>
+                        <td>@Model.Tenant?.FullName</td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Amount Paid</td>
+                        <td class="fw-bold text-success">
+                            ₱@Model.DepositAmount.ToString("N2")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Payment Date</td>
+                        <td>
+                            @Model.PaidAt?.ToString("MMMM dd, yyyy hh:mm tt")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Status</td>
+                        <td>
+                            <span class="badge bg-success">
+                                @Model.Status
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a asp-controller="Rental" asp-action="MyRentals"
+                   class="btn btn-primary">
+                    🏠 My Rentals
+                </a>
+                <a asp-controller="Wallet" asp-action="Index"
+                   class="btn btn-outline-primary">
+                    💰 My Wallet
+                </a>
+                <a asp-controller="Home" asp-action="Index"
+                   class="btn btn-outline-secondary">
+                    🔍 Browse More
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

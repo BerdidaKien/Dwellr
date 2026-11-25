@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Dwellr.Models.Property>
+@{
+    ViewData["Title"] = "Browse Listings";
+}
+
+<h2 class="mb-4">Browse Listings</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var p in Model)
+    {
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                @{
+                    var cover = p.Photos.FirstOrDefault(ph => ph.IsCover)
+                    ?? p.Photos.FirstOrDefault();
+                }
+                @if (cover != null)
+                {
+                    <img src="@cover.ImagePath" class="card-img-top"
+                         style="height:200px;object-fit:cover;" alt="@p.Title" />
+                }
+                else
+                {
+                    <div class="bg-secondary text-white d-flex align-items-center
+                                        justify-content-center" style="height:200px;">
+                        No Photo
+                    </div>
+                }
+                <div class="card-body">
+                    <span class="badge bg-primary mb-2">@p.Type</span>
+                    <h5 class="card-title">@p.Title</h5>
+                    <p class="text-muted small">📍 @p.District, @p.City</p>
+                    <p class="fw-bold text-success fs-5">₱@p.Price.ToString("N0")/mo</p>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Listing" asp-action="Detail"
+                       asp-route-id="@p.PropertyId"
+                       class="btn btn-outline-primary w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

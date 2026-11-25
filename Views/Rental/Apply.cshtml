@@ -1,0 +1,98 @@
+﻿@model Dwellr.Models.Property
+@{
+    ViewData["Title"] = "Rent This Property";
+    decimal balance = ViewBag.Balance;
+    decimal deposit = ViewBag.Deposit;
+    bool hasEnough = balance >= deposit;
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card shadow-sm p-4">
+            <h2 class="fw-bold mb-1">🏠 Rent This Property</h2>
+            <p class="text-muted mb-4">
+                Review the details before confirming your payment.
+            </p>
+
+            <!-- Property Summary -->
+            <div class="card bg-light border-0 p-3 mb-4">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h5 class="fw-bold mb-1">@Model.Title</h5>
+                        <p class="text-muted small mb-0">
+                            📍 @Model.District, @Model.City
+                        </p>
+                        <p class="text-muted small mb-0">
+                            Posted by: @Model.Landlord?.FullName
+                        </p>
+                    </div>
+                    <div class="text-end">
+                        <span class="badge bg-primary">@Model.Type</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Breakdown -->
+            <h6 class="fw-bold mb-3">Payment Breakdown</h6>
+            <table class="table table-bordered mb-4">
+                <tr>
+                    <td>Security Deposit (1 month)</td>
+                    <td class="text-end fw-bold">
+                        ₱@deposit.ToString("N2")
+                    </td>
+                </tr>
+                <tr class="table-dark">
+                    <td><strong>Total Due</strong></td>
+                    <td class="text-end">
+                        <strong>₱@deposit.ToString("N2")</strong>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Wallet Balance -->
+            <div class="alert alert-@(hasEnough ? "success" : "danger") mb-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>💰 Your Wallet Balance</span>
+                    <strong>₱@balance.ToString("N2")</strong>
+                </div>
+                @if (!hasEnough)
+                {
+                    <hr />
+                    <p class="mb-2 small">
+                        You need ₱@((deposit - balance).ToString("N2")) more
+                        to complete this payment.
+                    </p>
+                    <a asp-controller="Wallet" asp-action="TopUp"
+                       class="btn btn-warning btn-sm">
+                        + Top Up Wallet
+                    </a>
+                }
+            </div>
+
+            @if (hasEnough)
+            {
+                <form asp-controller="Rental" asp-action="ConfirmPayment"
+                      method="post">
+                    <input type="hidden" name="propertyId"
+                           value="@Model.PropertyId" />
+                    <div class="alert alert-info small mb-3">
+                        ℹ️ By confirming, ₱@deposit.ToString("N2") will be
+                        deducted from your wallet and sent to the landlord.
+                        The property will be marked as rented.
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 btn-lg"
+                            onclick="return confirm(
+                                    'Confirm payment of ₱@deposit.ToString("N0")?')">
+                        ✅ Confirm Payment
+                    </button>
+                </form>
+            }
+
+            <a asp-controller="Listing" asp-action="Detail"
+               asp-route-id="@Model.PropertyId"
+               class="btn btn-outline-secondary w-100 mt-2">
+                ← Back to Listing
+            </a>
+        </div>
+    </div>
+</div>

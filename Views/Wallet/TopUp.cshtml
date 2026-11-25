@@ -1,0 +1,80 @@
+﻿@model Dwellr.Models.ViewModels.TopUpViewModel
+@{
+    ViewData["Title"] = "Top Up Wallet";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm p-4">
+            <h2 class="mb-1 fw-bold">💳 Top Up Wallet</h2>
+            <p class="text-muted mb-4">
+                Add balance to your Dwellr wallet using a card.
+            </p>
+
+            <div asp-validation-summary="All" class="alert alert-danger"></div>
+
+            <form asp-controller="Wallet" asp-action="TopUp" method="post">
+                <!-- Amount -->
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Amount (₱)</label>
+                    <input asp-for="Amount" class="form-control form-control-lg"
+                           type="number" placeholder="Enter amount" />
+                    <div class="mt-2 d-flex gap-2 flex-wrap">
+                        @foreach (var amt in new[] { 500, 1000, 2000, 5000, 10000 })
+                        {
+                            <button type="button"
+                                    class="btn btn-outline-secondary btn-sm"
+                                    onclick="document.getElementById('Amount').value='@amt'">
+                                ₱@amt.ToString("N0")
+                            </button>
+                        }
+                    </div>
+                </div>
+
+                <hr />
+                <h6 class="fw-bold mb-3">Card Details</h6>
+
+                <!-- Card Number -->
+                <div class="mb-3">
+                    <label class="form-label">Card Number</label>
+                    <input asp-for="CardNumber" class="form-control"
+                           placeholder="1234 5678 9012 3456"
+                           maxlength="16" />
+                    <small class="text-muted">Use any 16-digit number for demo</small>
+                </div>
+
+                <!-- Card Holder -->
+                <div class="mb-3">
+                    <label class="form-label">Card Holder Name</label>
+                    <input asp-for="CardHolder" class="form-control"
+                           placeholder="Juan Dela Cruz" />
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Expiry Date</label>
+                        <input asp-for="ExpiryDate" class="form-control"
+                               placeholder="MM/YY" maxlength="5" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">CVV</label>
+                        <input asp-for="CVV" class="form-control"
+                               placeholder="123" maxlength="3"
+                               type="password" />
+                    </div>
+                </div>
+
+                <div class="alert alert-warning small">
+                    🔒 This is a demo payment system.
+                    No real card data is processed.
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 btn-lg">
+                    Add Balance
+                </button>
+                <a asp-controller="Wallet" asp-action="Index"
+                   class="btn btn-outline-secondary w-100 mt-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

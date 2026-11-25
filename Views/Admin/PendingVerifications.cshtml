@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Dwellr.Models.AppUser>
+@{
+    ViewData["Title"] = "Pending Verifications";
+}
+
+<h2 class="mb-4">Pending ID Verifications</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No pending verifications at the moment.</div>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Submitted ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td>
+                        @if (user.IDDocumentPath != null)
+                        {
+                            <a href="@user.IDDocumentPath" target="_blank"
+                               class="btn btn-sm btn-outline-primary">View ID</a>
+                        }
+                        else
+                        {
+                            <span class="text-muted">No file</span>
+                        }
+                    </td>
+                    <td>
+                        <form asp-controller="Admin" asp-action="ApproveID"
+                              asp-route-userId="@user.Id"
+                              method="post" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-success">
+                                ✅ Approve
+                            </button>
+                        </form>
+                        <form asp-controller="Admin" asp-action="RejectID"
+                              asp-route-userId="@user.Id"
+                              method="post" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Reject this ID?')">
+                                ❌ Reject
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
