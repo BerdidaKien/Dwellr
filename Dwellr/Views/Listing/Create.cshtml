@@ -1,0 +1,81 @@
+﻿@model Property
+@{
+    ViewData["Title"] = "Post a Listing";
+}
+
+<h1 class="h2 mb-1">Post a new listing</h1>
+<p class="text-muted mb-4">It's saved as a draft first. You can publish it from My Listings.</p>
+
+<div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+<form asp-controller="Listing" asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="row g-3">
+        <div class="col-md-8">
+            <label asp-for="Title" class="form-label">Title</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger small"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Type" class="form-label">Property type</label>
+            <select asp-for="Type" class="form-select" asp-items="Html.GetEnumSelectList<PropertyType>()"></select>
+            <span asp-validation-for="Type" class="text-danger small"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="Description" class="form-label">Description</label>
+            <textarea asp-for="Description" class="form-control" rows="5" aria-describedby="descHelp"></textarea>
+            <div id="descHelp" class="form-text">At least 50 characters.</div>
+            <span asp-validation-for="Description" class="text-danger small"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Price" class="form-label">Monthly price (₱)</label>
+            <input asp-for="Price" class="form-control" type="number" min="0" />
+            <span asp-validation-for="Price" class="text-danger small"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="City" class="form-label">City</label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger small"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="District" class="form-label">District</label>
+            <input asp-for="District" class="form-control" />
+            <span asp-validation-for="District" class="text-danger small"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="Address" class="form-label">Full address</label>
+            <input asp-for="Address" class="form-control" autocomplete="street-address" />
+            <span asp-validation-for="Address" class="text-danger small"></span>
+        </div>
+        <div class="col-6 col-md-3">
+            <label asp-for="Bedrooms" class="form-label">Bedrooms</label>
+            <input asp-for="Bedrooms" class="form-control" type="number" min="0" />
+            <span asp-validation-for="Bedrooms" class="text-danger small"></span>
+        </div>
+        <div class="col-6 col-md-3">
+            <label asp-for="Bathrooms" class="form-label">Bathrooms</label>
+            <input asp-for="Bathrooms" class="form-control" type="number" min="0" />
+            <span asp-validation-for="Bathrooms" class="text-danger small"></span>
+        </div>
+        <div class="col-6 col-md-3">
+            <label asp-for="AreaSqM" class="form-label">Area (m²)</label>
+            <input asp-for="AreaSqM" class="form-control" type="number" min="0" />
+            <span asp-validation-for="AreaSqM" class="text-danger small"></span>
+        </div>
+        <div class="col-6 col-md-3">
+            <label asp-for="AvailableFrom" class="form-label">Available from</label>
+            <input asp-for="AvailableFrom" class="form-control" type="date" />
+            <span asp-validation-for="AvailableFrom" class="text-danger small"></span>
+        </div>
+        <div class="col-12">
+            <label for="photos" class="form-label">Photos</label>
+            <input id="photos" type="file" name="photos" class="form-control" multiple accept="image/*" aria-describedby="photoHelp" />
+            <div id="photoHelp" class="form-text">Minimum 3 photos. Hold Ctrl (Cmd on Mac) to select several at once.</div>
+        </div>
+        <div class="col-12 d-flex flex-wrap gap-2">
+            <button type="submit" class="btn btn-primary">Save as draft</button>
+            <a asp-controller="Listing" asp-action="MyListings" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Property>
+@{
+    ViewData["Title"] = "My Listings";
+    string Badge(PropertyStatus s) => s switch
+    {
+        PropertyStatus.Published => "success",
+        PropertyStatus.Rented => "warning text-dark",
+        PropertyStatus.Hidden => "danger",
+        _ => "secondary"
+    };
+}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
+    <h1 class="h2 mb-0">My Listings</h1>
+    <a asp-controller="Listing" asp-action="Create" class="btn btn-primary">+ Post new listing</a>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="text-center py-5">
+        <div class="display-1"><i class="bi bi-house-door me-1" aria-hidden="true"></i></div>
+        <h2 class="h5 text-muted mt-3">You have no listings yet.</h2>
+        <a asp-controller="Listing" asp-action="Create" class="btn btn-primary mt-2">Post your first listing</a>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr><th>Title</th><th>Type</th><th>Price</th><th>Status</th><th>Photos</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td class="fw-semibold">@p.Title</td>
+                        <td>@p.Type</td>
+                        <td class="text-nowrap">₱@p.Price.ToString("N0")/mo</td>
+                        <td><span class="badge bg-@Badge(p.Status)">@p.Status</span></td>
+                        <td>@(p.Photos?.Count ?? 0)</td>
+                        <td>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a asp-controller="Listing" asp-action="Detail" asp-route-id="@p.PropertyId"
+                                   class="btn btn-sm btn-outline-primary"><i class="bi bi-eye me-1" aria-hidden="true"></i>View</a>
+
+                                @if (p.Status == PropertyStatus.Draft)
+                                {
+                                    <form asp-controller="Listing" asp-action="Publish" asp-route-id="@p.PropertyId" method="post">
+                                        <button type="submit" class="btn btn-sm btn-success"><i class="bi bi-send me-1" aria-hidden="true"></i>Publish</button>
+                                    </form>
+                                }
+                                else if (p.Status == PropertyStatus.Published)
+                                {
+                                    <form asp-controller="Listing" asp-action="MarkRented" asp-route-id="@p.PropertyId" method="post">
+                                        <button type="submit" class="btn btn-sm btn-warning"
+                                                onclick="return confirm('Mark this property as rented?')"><i class="bi bi-house-door me-1" aria-hidden="true"></i>Mark rented</button>
+                                    </form>
+                                }
+                                else if (p.Status == PropertyStatus.Rented)
+                                {
+                                    <form asp-controller="Listing" asp-action="MarkAvailable" asp-route-id="@p.PropertyId" method="post">
+                                        <button type="submit" class="btn btn-sm btn-success"
+                                                onclick="return confirm('Mark this property as available again?')"><i class="bi bi-check-circle-fill me-1" aria-hidden="true"></i>Mark available</button>
+                                    </form>
+                                }
+                                else if (p.Status == PropertyStatus.Hidden)
+                                {
+                                    <span class="text-danger small align-self-center"><i class="bi bi-slash-circle me-1" aria-hidden="true"></i>Hidden by admin</span>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,91 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.thumb {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-hover {
+    transition: transform .15s, box-shadow .15s;
+}
+
+    .card-hover:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    }
+
+.carousel-img {
+    height: 260px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .carousel-img {
+        height: 420px;
+    }
+}
+
+.map {
+    height: 350px;
+}
+
+.sticky-card {
+    top: 20px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+}
+
+.bi::before {
+    vertical-align: -.125em;
+}
+
+.avatar-lg {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+}
+
+.chat-box {
+    height: 60vh;
+    min-height: 300px;
+    overflow-y: auto;
+}
+
+.bubble {
+    max-width: 75%;
+}
+
+    .bubble p {
+        white-space: pre-wrap;
+    }
+
+@media print {
+    nav, footer, .no-print {
+        display: none !important;
+    }
+}

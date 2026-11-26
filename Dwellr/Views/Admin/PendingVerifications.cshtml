@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Dwellr.Models.AppUser>
+@{
+    ViewData["Title"] = "Landlord Approvals";
+}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+    <h1 class="h2 mb-0">Landlord approvals</h1>
+    <a asp-controller="Admin" asp-action="Users" class="btn btn-outline-secondary btn-sm">All users</a>
+</div>
+<p class="text-muted mb-4">
+    People who registered as landlords and aren't approved yet. Verify them yourself first (ID check by video call or in person), then approve.
+</p>
+
+@if (!Model.Any())
+{
+    <div class="text-center py-5 text-muted">
+        <div class="display-1"><i class="bi bi-patch-check"></i></div>
+        <p class="mt-3">No landlords waiting for approval.</p>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr><th>Name</th><th>Email</th><th>Registered</th><th>Status</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td class="fw-semibold">@user.FullName</td>
+                        <td class="text-break">@user.Email</td>
+                        <td class="text-nowrap">@user.CreatedAt.ToString("MMM dd, yyyy")</td>
+                        <td><span class="badge bg-warning text-dark">@user.VerificationStatus</span></td>
+                        <td>
+                            <div class="d-flex flex-wrap gap-2">
+                                <form asp-controller="Admin" asp-action="ApproveID" asp-route-userId="@user.Id" method="post">
+                                    <button type="submit" class="btn btn-sm btn-success"
+                                            onclick="return confirm('Approve this landlord? Only do this after you have verified them.')">
+                                        <i class="bi bi-check-circle-fill me-1"></i>Approve
+                                    </button>
+                                </form>
+                                <form asp-controller="Admin" asp-action="BanUser" asp-route-userId="@user.Id" method="post">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger"
+                                            onclick="return confirm('Ban this user and hide their listings?')">
+                                        <i class="bi bi-ban me-1"></i>Ban
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

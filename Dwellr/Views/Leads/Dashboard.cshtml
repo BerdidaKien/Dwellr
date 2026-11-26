@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ListingRequest>
+@{
+    ViewData["Title"] = "Experiment Dashboard";
+    var waitlist = (List<WaitlistEntry>)ViewBag.Waitlist;
+    var stats = new[] {
+        (waitlist.Count, "Waitlist signups", "bi-envelope"),
+        (Model.Count(), "Landlord requests", "bi-people"),
+        (Model.Count(r => r.Status == LeadStatus.IdChecked || r.Status == LeadStatus.Listed), "Landlords verified", "bi-patch-check"),
+        (Model.Count(r => r.Status == LeadStatus.Listed), "Listings posted", "bi-house-door") };
+}
+
+<h1 class="h2 fw-bold mb-4"><i class="bi bi-graph-up me-2"></i>Experiment dashboard</h1>
+
+<div class="row g-3 mb-4 text-center">
+    @foreach (var (count, label, icon) in stats)
+    {
+        <div class="col-6 col-md-3">
+            <div class="card border-0 bg-light p-3 h-100">
+                <div class="text-primary fs-4"><i class="bi @icon"></i></div>
+                <div class="h3 fw-bold mb-0">@count</div>
+                <small class="text-muted">@label</small>
+            </div>
+        </div>
+    }
+</div>
+
+<h2 class="h5 fw-bold">Signups by source</h2>
+<ul class="list-group mb-4">
+    @foreach (var g in waitlist.GroupBy(w => w.Source ?? "direct").OrderByDescending(g => g.Count()))
+    {
+        <li class="list-group-item d-flex justify-content-between">@g.Key <strong>@g.Count()</strong></li>
+    }
+</ul>
+
+<h2 class="h5 fw-bold">Landlord requests (manual pipeline)</h2>
+<div class="table-responsive">
+    <table class="table table-bordered align-middle">
+        <thead class="table-dark">
+            <tr><th>Landlord</th><th>Property</th><th>Status</th><th>Update</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var r in Model)
+            {
+                var items = Html.GetEnumSelectList<LeadStatus>()
+                    .Select(i => new SelectListItem(i.Text, i.Value, i.Value == ((int)r.Status).ToString()));
+                <tr>
+                    <td>@r.FullName<br /><small class="text-muted">@r.Phone</small></td>
+                    <td>@r.Type, @r.Area<br /><small class="text-muted">₱@r.ExpectedPrice</small></td>
+                    <td>
+                        <span class="badge bg-@(r.Status == LeadStatus.Listed ? "success" : r.Status == LeadStatus.IdChecked ? "info text-dark" : "secondary")">@r.Status</span>
+                    </td>
+                    <td>
+                        <form asp-action="UpdateStatus" method="post" class="d-flex flex-wrap gap-2">
+                            <input type="hidden" name="id" value="@r.ListingRequestId" />
+                            <select name="status" class="form-select form-select-sm w-auto" aria-label="Status" asp-items="items"></select>
+                            <input name="adminNotes" value="@r.AdminNotes" class="form-control form-control-sm w-auto flex-grow-1"
+                                   aria-label="Notes" placeholder="What did you do manually? Any pain point?" />
+                            <button class="btn btn-sm btn-primary">Save</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

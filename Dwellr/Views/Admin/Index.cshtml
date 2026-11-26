@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+    var tiles = new[] {
+        ("Admin", "PendingVerifications", "bi-person-check", "Landlord approvals", "Approve landlords after you verify them", ""),
+        ("Admin", "Users", "bi-people", "Manage users", "Approve landlords, ban users", ""),
+        ("Admin", "Reports", "bi-flag", "View reports", "Handle user reports", ""),
+        ("Leads", "Dashboard", "bi-graph-up", "Experiments", "Waitlist signups and landlord pipeline", "border-warning") };
+}
+
+<h1 class="h2 mb-4">Admin dashboard</h1>
+<div class="row g-4">
+    @foreach (var (c, a, icon, title, text, border) in tiles)
+    {
+        <div class="col-sm-6 col-lg-3">
+            <a asp-controller="@c" asp-action="@a" class="text-decoration-none text-body">
+                <div class="card shadow-sm text-center p-4 h-100 card-hover @border">
+                    <div class="display-5 text-primary mb-2"><i class="bi @icon"></i></div>
+                    <h2 class="h5">@title</h2>
+                    <small class="text-muted">@text</small>
+                </div>
+            </a>
+        </div>
+    }
+</div>

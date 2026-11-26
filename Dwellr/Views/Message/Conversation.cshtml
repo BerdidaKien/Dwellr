@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Message>
+@{
+    ViewData["Title"] = "Conversation";
+    var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+}
+
+<div class="card shadow-sm">
+    <div class="card-header d-flex align-items-center gap-2">
+        <a asp-controller="Message" asp-action="Index" class="btn btn-sm btn-outline-secondary" aria-label="Back to messages">
+            <i class="bi bi-arrow-left"></i>
+        </a>
+        <h1 class="h5 mb-0">Conversation</h1>
+    </div>
+    <div id="chat" class="card-body chat-box" role="log" aria-live="polite">
+        @if (!Model.Any())
+        {
+            <p class="text-muted text-center mt-4">No messages yet. Say hello below.</p>
+        }
+        @foreach (var m in Model)
+        {
+            var isMine = m.SenderId == currentUserId;
+            <div class="d-flex @(isMine ? "justify-content-end" : "justify-content-start") mb-2">
+                <div class="p-3 rounded bubble @(isMine ? "bg-primary text-white" : "bg-light")">
+                    <p class="mb-1 text-break">@m.Body</p>
+                    <small class="@(isMine ? "text-white-50" : "text-muted")">@m.SentAt.ToString("MMM dd, hh:mm tt")</small>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="card-footer">
+        <form asp-controller="Message" asp-action="Send" method="post">
+            <input type="hidden" name="propertyId" value="@ViewBag.PropertyId" />
+            <input type="hidden" name="receiverId" value="@ViewBag.OtherUserId" />
+            <div class="input-group">
+                <input type="text" name="body" class="form-control" placeholder="Type a message..."
+                       aria-label="Message" autocomplete="off" maxlength="2000" autofocus required />
+                <button type="submit" class="btn btn-primary"><i class="bi bi-send me-1"></i>Send</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>var c = document.getElementById('chat'); c.scrollTop = c.scrollHeight;</script>
+}

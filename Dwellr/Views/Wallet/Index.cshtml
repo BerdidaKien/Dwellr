@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Transaction>
+@{
+    ViewData["Title"] = "My Wallet";
+    var userId = ViewBag.UserId as string;
+    decimal balance = ViewBag.Balance;
+    string TypeBadge(TransactionType t) => t switch
+    {
+        TransactionType.TopUp => "success",
+        TransactionType.Deposit => "primary",
+        _ => "warning text-dark"
+    };
+}
+
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="hero card border-0 shadow-sm p-4 text-center h-100">
+            <p class="text-white-50 mb-1">Available balance</p>
+            <h1 class="h2 text-white fw-bold">₱@balance.ToString("N2")</h1>
+            <a asp-controller="Wallet" asp-action="TopUp" class="btn btn-warning mt-3">
+                <i class="bi bi-plus-circle me-1"></i>Top up wallet
+            </a>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm p-4 h-100">
+            <h2 class="h5 fw-bold mb-3">Quick actions</h2>
+            <div class="d-flex gap-2 flex-wrap">
+                <a asp-controller="Rental" asp-action="MyRentals" class="btn btn-outline-success"><i class="bi bi-house-door me-1"></i>My rentals</a>
+                <a asp-controller="Listing" asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-search me-1"></i>Browse listings</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="h5 fw-bold mb-3">Transaction history</h2>
+
+@if (!Model.Any())
+{
+    <div class="text-center py-4 text-muted">
+        <div class="display-4"><i class="bi bi-receipt"></i></div>
+        <p class="mt-2">No transactions yet.</p>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr><th>Date</th><th>Description</th><th>Type</th><th class="text-end">Amount</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var t in Model)
+                {
+                    var isCredit = t.ReceiverId == userId;
+                    <tr>
+                        <td class="text-nowrap">@t.CreatedAt.ToString("MMM dd, yyyy hh:mm tt")</td>
+                        <td>@t.Description</td>
+                        <td><span class="badge bg-@TypeBadge(t.Type)">@t.Type</span></td>
+                        <td class="fw-bold text-end text-nowrap @(isCredit ? "text-success" : "text-danger")">
+                            @(isCredit ? "+" : "-")₱@t.Amount.ToString("N2")
+                        </td>
+                        <td><span class="badge bg-@(t.Status == TransactionStatus.Completed ? "success" : "secondary")">@t.Status</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

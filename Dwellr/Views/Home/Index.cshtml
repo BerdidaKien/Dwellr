@@ -1,0 +1,138 @@
+﻿@model IEnumerable<Property>
+@{
+    ViewData["Title"] = "Find Your Next Home";
+    var cities = (ViewBag.Cities as List<string> ?? new List<string>()).OrderBy(c => c);
+    var stats = new[] {
+        (Model.Count().ToString(), "text-primary", "Listings found"),
+        ("bi-patch-check-fill", "text-success", "ID-verified landlords"),
+        ("bi-cash-coin", "text-warning", "No hidden fees") };
+    var steps = new[] {
+        ("bi-search", "1. Search", "Browse verified listings filtered by city, type, and budget."),
+        ("bi-chat-dots", "2. Connect", "Message landlords directly through our secure in-app messaging."),
+        ("bi-key", "3. Move In", "Finalize your rental agreement and move into your new home.") };
+    var perks = new[] {
+        ("bi-patch-check-fill", "Verified Landlords", "Every landlord is ID-verified before they can post."),
+        ("bi-lock-fill", "Privacy Protected", "Contact info is masked. All communication stays on platform."),
+        ("bi-slash-circle", "Scam Protection", "Report suspicious listings. Scammers are permanently banned."),
+        ("bi-cash-coin", "Free to Use", "No broker fees. No hidden charges. Just find your home.") };
+}
+
+<div class="hero text-white text-center py-5 mb-5 rounded-3">
+    <div class="container py-4">
+        <h1 class="display-4 fw-bold mb-3">Find Your Perfect Place</h1>
+        <p class="lead mb-4 text-white-50">
+            Browse verified houses, rooms, and bedspaces for rent across the Philippines.
+            Connect directly with landlords — no middlemen, no hidden fees.
+        </p>
+        <form asp-controller="Home" asp-action="Index" method="get" class="row g-2 justify-content-center">
+            <div class="col-12 col-md-3">
+                <label for="city" class="visually-hidden">City</label>
+                <input id="city" name="city" list="cityList" class="form-control form-control-lg"
+                       placeholder="City" value="@ViewBag.SelectedCity" />
+                <datalist id="cityList">@foreach (var c in cities) {
+                    <option value="@c"></option>
+                }
+            </datalist>
+        </div>
+        <div class="col-12 col-md-2">
+            <label for="type" class="visually-hidden">Property type</label>
+            <select id="type" name="type" class="form-select form-select-lg">
+                <option value="">All Types</option>
+                @foreach (var t in Enum.GetValues<PropertyType>())
+                {
+                    <option value="@t" selected="@(ViewBag.SelectedType?.ToString() == t.ToString())">@t</option>
+                }
+            </select>
+        </div>
+        <div class="col-6 col-md-2">
+            <label for="minPrice" class="visually-hidden">Minimum price</label>
+            <input id="minPrice" type="number" min="0" name="minPrice" class="form-control form-control-lg"
+                   placeholder="₱ Min" value="@ViewBag.MinPrice" />
+        </div>
+        <div class="col-6 col-md-2">
+            <label for="maxPrice" class="visually-hidden">Maximum price</label>
+            <input id="maxPrice" type="number" min="0" name="maxPrice" class="form-control form-control-lg"
+                   placeholder="₱ Max" value="@ViewBag.MaxPrice" />
+        </div>
+        <div class="col-12 col-md-2">
+            <button type="submit" class="btn btn-primary btn-lg w-100"><i class="bi bi-search me-1" aria-hidden="true"></i>Search</button>
+        </div>
+    </form>
+    <div class="mt-4 d-flex flex-wrap gap-2 justify-content-center">
+        <a asp-controller="Leads" asp-action="Waitlist" class="btn btn-warning btn-lg">Join the waitlist</a>
+        <a asp-controller="Leads" asp-action="ListYourProperty" class="btn btn-outline-light btn-lg">List your property</a>
+    </div>
+</div>
+</div>
+
+<div class="row text-center g-3 mb-5">
+    @foreach (var (value, color, label) in stats)
+    {
+        <div class="col-md-4">
+            <div class="card border-0 bg-light p-4">
+                <h2 class="fw-bold @color">@if (value.StartsWith("bi-")) {
+                    <i class="bi @value"></i>
+                } else
+                {
+
+                    <text>@value</text>
+                }
+            </h2>
+            <p class="text-muted mb-0">@label</p>
+        </div>
+    </div>
+}
+</div>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="h4 fw-bold mb-0">Latest Listings</h2>
+    @if (Model.Any())
+    {
+        <a asp-controller="Listing" asp-action="Index" class="btn btn-outline-primary btn-sm">View all →</a>
+    }
+</div>
+
+@if (Model.Any())
+{
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mb-5">
+        @foreach (var p in Model.Take(6))
+        {
+            <partial name="_PropertyCard" model="p" />
+        }
+    </div>
+}
+else
+{
+    <div class="text-center py-5 mb-5">
+        <div class="display-1"><i class="bi bi-house-door me-1" aria-hidden="true"></i></div>
+        <h3 class="h5 text-muted">No listings found. Try a different city, type, or price range.</h3>
+    </div>
+}
+
+<div class="bg-light rounded-3 p-4 p-md-5 mb-5">
+    <h2 class="h3 text-center fw-bold mb-5">How Dwellr works</h2>
+    <div class="row text-center g-4">
+        @foreach (var (icon, title, text) in steps)
+        {
+            <div class="col-md-4">
+                <div class="display-4 mb-3 text-primary"><i class="bi @icon"></i></div>
+                <h3 class="h5 fw-bold">@title</h3>
+                <p class="text-muted">@text</p>
+            </div>
+        }
+    </div>
+</div>
+
+<h2 class="h3 fw-bold mb-4 text-center">Why choose Dwellr?</h2>
+<div class="row g-4 mb-5">
+    @foreach (var (icon, title, text) in perks)
+    {
+        <div class="col-sm-6 col-lg-3 text-center">
+            <div class="card border-0 p-4 h-100">
+                <div class="display-5 mb-3 text-primary"><i class="bi @icon"></i></div>
+                <h3 class="h6 fw-bold">@title</h3>
+                <p class="text-muted small mb-0">@text</p>
+            </div>
+        </div>
+    }
+</div>

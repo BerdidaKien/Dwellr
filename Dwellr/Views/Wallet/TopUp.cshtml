@@ -1,0 +1,76 @@
+﻿@model Dwellr.Models.ViewModels.TopUpViewModel
+@{
+    ViewData["Title"] = "Top Up Wallet";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm p-4">
+            <h1 class="h2 mb-1 fw-bold"><i class="bi bi-credit-card me-2"></i>Top up wallet</h1>
+            <p class="text-muted mb-4">Add balance to your Dwellr wallet using a card.</p>
+
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+            <form asp-controller="Wallet" asp-action="TopUp" method="post">
+                <div class="mb-4">
+                    <label asp-for="Amount" class="form-label fw-bold">Amount (₱)</label>
+                    <input asp-for="Amount" class="form-control form-control-lg" type="number" min="1" placeholder="Enter amount" />
+                    <span asp-validation-for="Amount" class="text-danger small"></span>
+                    <div class="mt-2 d-flex gap-2 flex-wrap">
+                        @foreach (var amt in new[] { 500, 1000, 2000, 5000, 10000 })
+                        {
+                            <button type="button" class="btn btn-outline-secondary btn-sm quick-amount" data-amount="@amt">₱@amt.ToString("N0")</button>
+                        }
+                    </div>
+                </div>
+
+                <hr />
+                <h2 class="h6 fw-bold mb-3">Card details</h2>
+
+                <div class="mb-3">
+                    <label asp-for="CardNumber" class="form-label">Card number</label>
+                    <input asp-for="CardNumber" class="form-control" placeholder="1234567890123456"
+                           maxlength="16" inputmode="numeric" autocomplete="off" />
+                    <div class="form-text">Use any 16-digit number for the demo.</div>
+                    <span asp-validation-for="CardNumber" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CardHolder" class="form-label">Card holder name</label>
+                    <input asp-for="CardHolder" class="form-control" placeholder="Juan Dela Cruz" autocomplete="off" />
+                    <span asp-validation-for="CardHolder" class="text-danger small"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <label asp-for="ExpiryDate" class="form-label">Expiry date</label>
+                        <input asp-for="ExpiryDate" class="form-control" placeholder="MM/YY" maxlength="5" autocomplete="off" />
+                        <span asp-validation-for="ExpiryDate" class="text-danger small"></span>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <label asp-for="CVV" class="form-label">CVV</label>
+                        <input asp-for="CVV" class="form-control" placeholder="123" maxlength="3"
+                               type="password" inputmode="numeric" autocomplete="off" />
+                        <span asp-validation-for="CVV" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning small">
+                    <i class="bi bi-lock-fill me-1"></i>This is a demo payment system. No real card data is processed.
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 btn-lg">Add balance</button>
+                <a asp-controller="Wallet" asp-action="Index" class="btn btn-outline-secondary w-100 mt-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.querySelectorAll('.quick-amount').forEach(function (b) {
+            b.addEventListener('click', function () { document.getElementById('Amount').value = b.dataset.amount; });
+        });
+    </script>
+}

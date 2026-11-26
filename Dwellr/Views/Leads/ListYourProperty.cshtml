@@ -1,0 +1,58 @@
+﻿@model Dwellr.Models.ListingRequest
+@{
+    ViewData["Title"] = "List Your Property";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-9 col-lg-7">
+        <h1 class="fw-bold">List your property on Dwellr</h1>
+        <p class="text-muted">
+            Tell us about your place. Our team will contact you, verify your details, and post the
+            listing for you, usually within 48 hours. You don't need to learn any new software.
+        </p>
+
+        <div class="card shadow-sm p-4">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+            <form asp-controller="Leads" asp-action="ListYourProperty" method="post">
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label">Your name</label>
+                    <input asp-for="FullName" class="form-control" autocomplete="name" />
+                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Phone" class="form-label">Mobile number</label>
+                    <input asp-for="Phone" class="form-control" type="tel" autocomplete="tel" placeholder="09xx xxx xxxx" />
+                    <span asp-validation-for="Phone" class="text-danger small"></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Type" class="form-label">Property type</label>
+                        <select asp-for="Type" class="form-select" asp-items="Html.GetEnumSelectList<PropertyType>()"></select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="ExpectedPrice" class="form-label">Monthly rent (₱)</label>
+                        <input asp-for="ExpectedPrice" class="form-control" type="number" min="0" />
+                        <span asp-validation-for="ExpectedPrice" class="text-danger small"></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Area" class="form-label">Area / barangay</label>
+                    <input asp-for="Area" class="form-control" />
+                    <span asp-validation-for="Area" class="text-danger small"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Notes" class="form-label">Anything else we should know?</label>
+                    <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Notes" class="text-danger small"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100">Request listing</button>
+                <p class="small text-muted mt-3 mb-0">
+                    We use your details only for this Dwellr pilot. See our
+                    <a asp-controller="Home" asp-action="Privacy">privacy notice</a>.
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

@@ -1,0 +1,757 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Natnat\\Dwellr\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\message\\conversation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\message\\conversation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\listing\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\listing\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\listing\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\listing\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\leads\\thanks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\leads\\thanks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\controllers\\walletcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\controllers\\walletcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\controllers\\listingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\controllers\\listingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\admin\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\admin\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\leads\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\leads\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\admin\\pendingverifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\admin\\pendingverifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\controllers\\leadscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\controllers\\leadscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\listing\\saved.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\listing\\saved.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\listing\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\listing\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\listing\\mylistings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\listing\\mylistings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\shared\\_propertycard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\shared\\_propertycard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\leads\\listyourproperty.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\leads\\listyourproperty.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\leads\\waitlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\leads\\waitlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\account\\uploadid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\account\\uploadid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\rental\\receipt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\rental\\receipt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\rental\\myrentals.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\rental\\myrentals.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\rental\\apply.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\rental\\apply.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\wallet\\topup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\wallet\\topup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\wallet\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\wallet\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\message\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\message\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\listing\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\listing\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|c:\\natnat\\dwellr\\dwellr\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2077F349-C391-0A81-9B3C-61DF385F4E4E}|Dwellr\\Dwellr.csproj|solutionrelative:dwellr\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 26,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Thanks.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Leads\\Thanks.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Leads\\Thanks.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Leads\\Thanks.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Leads\\Thanks.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T03:21:10.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Dwellr\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Dwellr\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAqwIEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T02:43:19.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Reports.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Admin\\Reports.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Admin\\Reports.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Admin\\Reports.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Admin\\Reports.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowDQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:58:28.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Admin\\Users.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Admin\\Users.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Admin\\Users.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Admin\\Users.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:58:22.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WalletController.cs",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\WalletController.cs",
+              "RelativeDocumentMoniker": "Dwellr\\Controllers\\WalletController.cs",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\WalletController.cs",
+              "RelativeToolTip": "Dwellr\\Controllers\\WalletController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAwE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T02:43:58.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RentalController.cs",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\RentalController.cs",
+              "RelativeDocumentMoniker": "Dwellr\\Controllers\\RentalController.cs",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\RentalController.cs",
+              "RelativeToolTip": "Dwellr\\Controllers\\RentalController.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAwMEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T02:43:53.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MessageController.cs",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\MessageController.cs",
+              "RelativeDocumentMoniker": "Dwellr\\Controllers\\MessageController.cs",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\MessageController.cs",
+              "RelativeToolTip": "Dwellr\\Controllers\\MessageController.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAwHYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T02:43:45.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ListingController.cs",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\ListingController.cs",
+              "RelativeDocumentMoniker": "Dwellr\\Controllers\\ListingController.cs",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\ListingController.cs",
+              "RelativeToolTip": "Dwellr\\Controllers\\ListingController.cs",
+              "ViewState": "AgIAAA0BAAAAAAAAAAAAwCYBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T02:43:40.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LeadsController.cs",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\LeadsController.cs",
+              "RelativeDocumentMoniker": "Dwellr\\Controllers\\LeadsController.cs",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\LeadsController.cs",
+              "RelativeToolTip": "Dwellr\\Controllers\\LeadsController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAcwFQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T02:43:35.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Dwellr\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Dwellr\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAmwD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T02:43:29.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Dwellr\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Dwellr\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAwJUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T02:43:26.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Dwellr\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Dwellr\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-26T02:29:09.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:28:35.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PendingVerifications.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Admin\\PendingVerifications.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Admin\\PendingVerifications.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Admin\\PendingVerifications.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Admin\\PendingVerifications.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAowCwAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:28:23.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:28:16.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Leads\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Leads\\Dashboard.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Leads\\Dashboard.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Leads\\Dashboard.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAowEAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:28:08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ListYourProperty.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Leads\\ListYourProperty.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Leads\\ListYourProperty.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Leads\\ListYourProperty.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Leads\\ListYourProperty.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwDkAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:28:01.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Waitlist.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Leads\\Waitlist.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Leads\\Waitlist.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Leads\\Waitlist.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Leads\\Waitlist.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:27:53.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UploadID.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Account\\UploadID.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Account\\UploadID.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Account\\UploadID.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Account\\UploadID.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:27:42.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Account\\Profile.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Account\\Profile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:27:36.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Receipt.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Rental\\Receipt.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Rental\\Receipt.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Rental\\Receipt.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Rental\\Receipt.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAQwCgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:27:25.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "MyRentals.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Rental\\MyRentals.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Rental\\MyRentals.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Rental\\MyRentals.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Rental\\MyRentals.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAQwDwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:27:20.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Apply.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Rental\\Apply.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Rental\\Apply.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Rental\\Apply.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Rental\\Apply.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAQwEIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:27:15.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "TopUp.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Wallet\\TopUp.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Wallet\\TopUp.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Wallet\\TopUp.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Wallet\\TopUp.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAQwEsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:27:06.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Conversation.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Message\\Conversation.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Message\\Conversation.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Message\\Conversation.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Message\\Conversation.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwCwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:26:42.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Message\\Index.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Message\\Index.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Message\\Index.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Message\\Index.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:26:33.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\Create.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Listing\\Create.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\Create.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Listing\\Create.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAAAQwFAAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:18:47.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Saved.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\Saved.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Listing\\Saved.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\Saved.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Listing\\Saved.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:19:20.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MyListings.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\MyListings.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Listing\\MyListings.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\MyListings.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Listing\\MyListings.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAQwE0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:19:14.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Listing\\Edit.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\Edit.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Listing\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:19:03.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_PropertyCard.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Shared\\_PropertyCard.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Shared\\_PropertyCard.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Shared\\_PropertyCard.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Shared\\_PropertyCard.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-26T02:13:20.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAowDUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T14:06:11.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAQwC4AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T14:06:05.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\Detail.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Listing\\Detail.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\Detail.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Listing\\Detail.cshtml",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAowMkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T14:05:53.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\Index.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Listing\\Index.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Listing\\Index.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Listing\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T14:05:41.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T14:05:21.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T14:05:16.422Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Dwellr\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Dwellr\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-25T14:04:31.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Wallet\\Index.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Wallet\\Index.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Wallet\\Index.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Wallet\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T13:56:58.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAwGwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T13:54:56.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T13:54:54.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T13:54:42.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Dwellr\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Natnat\\Dwellr\\Dwellr\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Dwellr\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAqwIkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-25T13:54:39.99Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

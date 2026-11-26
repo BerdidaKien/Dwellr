@@ -1,0 +1,123 @@
+﻿@{
+    var isAuth = User.Identity?.IsAuthenticated == true;
+    var isAdmin = User.IsInRole("Admin");
+    string Active(string c, string a) =>
+        ViewContext.RouteData.Values["controller"]?.ToString() == c &&
+        ViewContext.RouteData.Values["action"]?.ToString() == a ? "active" : "";
+
+    var isLandlord = User.FindFirst("ActiveRole")?.Value == "Landlord";
+    var displayName = User.FindFirst("FullName")?.Value ?? "Account";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Find verified houses, rooms and bedspaces for rent in the Philippines. Contact landlords directly." />
+    <title>Dwellr - @ViewData["Title"]</title>
+    <link rel="icon" href="~/favicon.ico" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <a href="#main" class="visually-hidden-focusable position-absolute bg-white p-2">Skip to content</a>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index"><i class="bi bi-house-door-fill me-1" aria-hidden="true"></i>Dwellr</a>
+            
+            @if (isAuth && !isAdmin)
+            {
+                <span class="badge rounded-pill me-auto me-lg-3 @(isLandlord ? "bg-success" : "bg-info text-dark")">
+                    <i class="bi @(isLandlord ? "bi-key-fill" : "bi-person-fill") me-1" aria-hidden="true"></i>@(isLandlord ? "Landlord" : "Tenant")
+                </span>
+            }
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link @Active("Home", "Index")" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link @Active("Listing", "Index")" asp-controller="Listing" asp-action="Index">Browse</a></li>
+                    @if (isAuth && !isAdmin && User.FindFirst("VerificationStatus")?.Value == "IDApproved")
+                    {
+                        <li class="nav-item"><a class="nav-link @Active("Listing", "Create")" asp-controller="Listing" asp-action="Create">Post Listing</a></li>
+                        <li class="nav-item"><a class="nav-link @Active("Listing", "MyListings")" asp-controller="Listing" asp-action="MyListings">My Listings</a></li>
+                    }
+                </ul>
+                <ul class="navbar-nav">
+                    @if (isAuth)
+                    {
+                        @if (isAdmin)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-warning fw-bold" href="#" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-shield-check me-1" aria-hidden="true"></i>Admin</a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Index">Admin Panel</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="PendingVerifications">Landlord approvals</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Leads" asp-action="Dashboard">Experiments</a></li>
+                                </ul>
+                            </li>
+                        }
+                        <li class="nav-item"><a class="nav-link @Active("Message", "Index")" asp-controller="Message" asp-action="Index">Messages</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1" aria-hidden="true"></i>
+                                <span class="d-inline-block text-truncate align-bottom" style="max-width: 12rem;">@displayName</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                @if (!isAdmin)
+                                {
+                                    <li><a class="dropdown-item" asp-controller="Listing" asp-action="Saved"><i class="bi bi-heart-fill me-1" aria-hidden="true"></i>Saved</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Wallet" asp-action="Index"><i class="bi bi-wallet2 me-1" aria-hidden="true"></i>Wallet</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Rental" asp-action="MyRentals"><i class="bi bi-house-door me-1" aria-hidden="true"></i>My Rentals</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                }
+                                <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Profile</a></li>
+                                <li><form asp-controller="Account" asp-action="Logout" method="post"><button type="submit" class="dropdown-item">Logout</button></form></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Login">Login</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-primary text-white px-3" asp-controller="Account" asp-action="Register">Register</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="container my-4 flex-grow-1">
+        @foreach (var (key, cls) in new[] { ("Message", "success"), ("Error", "danger") })
+        {
+            if (TempData[key] is string msg)
+            {
+                <div class="alert alert-@cls alert-dismissible fade show" role="alert">
+                    @msg
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+        }
+        @RenderBody()
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <small>
+            © @DateTime.Now.Year Dwellr. All rights reserved. ·
+            <a class="link-light" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </small>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@model Dwellr.Models.ViewModels.LoginViewModel
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment Env
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card shadow-sm p-4">
+            <h1 class="h2 mb-4 text-center">Welcome back</h1>
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+            <form asp-controller="Account" asp-action="Login" method="post">
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control" autocomplete="username" />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <input asp-for="Password" class="form-control" type="password" autocomplete="current-password" />
+                    <span asp-validation-for="Password" class="text-danger small"></span>
+                </div>
+                <div class="mb-3 form-check">
+                    <input asp-for="RememberMe" class="form-check-input" />
+                    <label asp-for="RememberMe" class="form-check-label">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Log in</button>
+            </form>
+            <hr />
+            <p class="text-center mb-0">
+                Don't have an account? <a asp-controller="Account" asp-action="Register">Register</a>
+            </p>
+
+            @if (Env.IsDevelopment())
+            {
+                <div class="alert alert-info mt-3 mb-0 small">
+                    <strong><i class="bi bi-shield-lock me-1" aria-hidden="true"></i>Demo credentials (development only)</strong><br />
+                    <i class="bi bi-shield-check me-1" aria-hidden="true"></i>Admin: admin@dwellr.com / Admin@1234<br />
+                    <i class="bi bi-house-door me-1" aria-hidden="true"></i>Landlord: landlord@gmail.com / Landlord2026<br />
+                    <i class="bi bi-search me-1" aria-hidden="true"></i>Tenant: tenantonly@gmail.com / Tenant2026
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

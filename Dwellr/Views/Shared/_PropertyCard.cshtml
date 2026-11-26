@@ -1,0 +1,40 @@
+﻿@model Property
+@{
+    var cover = Model.Photos?.FirstOrDefault(ph => ph.IsCover) ?? Model.Photos?.FirstOrDefault();
+}
+<div class="col">
+    <div class="card h-100 shadow-sm border-0 card-hover">
+        <div class="position-relative">
+            @if (cover != null)
+            {
+                <img src="@cover.ImagePath" class="card-img-top thumb" alt="@Model.Title" loading="lazy" />
+            }
+            else
+            {
+                <div class="thumb d-flex align-items-center justify-content-center bg-secondary-subtle text-body-secondary"><i class="bi bi-camera me-1" aria-hidden="true"></i>No photo</div>
+            }
+            <span class="badge bg-primary position-absolute top-0 start-0 m-2">@Model.Type</span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title fw-bold">@Model.Title</h5>
+            <p class="text-muted small mb-2"><i class="bi bi-geo-alt-fill me-1" aria-hidden="true"></i>@Model.District, @Model.City</p>
+            <p class="fw-bold text-success fs-5 mb-2">₱@Model.Price.ToString("N0") <small class="text-muted fs-6">/month</small></p>
+            <div class="d-flex flex-wrap gap-3 text-muted small">
+                <span><i class="bi bi-door-closed me-1" aria-hidden="true"></i>@Model.Bedrooms beds</span>
+                <span><i class="bi bi-droplet me-1" aria-hidden="true"></i>@Model.Bathrooms baths</span>
+                <span><i class="bi bi-bounding-box me-1" aria-hidden="true"></i>@Model.AreaSqM m²</span>
+            </div>
+        </div>
+        <div class="card-footer bg-white border-0 pt-0 d-flex gap-2">
+            <a asp-controller="Listing" asp-action="Detail" asp-route-id="@Model.PropertyId"
+               class="btn btn-outline-primary flex-grow-1">View Details</a>
+            @if (ViewData["Unsave"] is true)
+            {
+                <form asp-controller="Listing" asp-action="Unsave" method="post">
+                    <input type="hidden" name="propertyId" value="@Model.PropertyId" />
+                    <button type="submit" class="btn btn-outline-danger"><i class="bi bi-trash me-1" aria-hidden="true"></i>Remove</button>
+                </form>
+            }
+        </div>
+    </div>
+</div>
